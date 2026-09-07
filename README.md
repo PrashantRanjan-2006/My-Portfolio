@@ -1,139 +1,62 @@
-🚀 Personal Portfolio – Prashant Ranjan
+# My Portfolio — Prashant Ranjan
 
-A modern personal portfolio website showcasing my projects, skills, designs, and development journey as a Computer Science student.
+Personal portfolio website (3D / interactive front-end) showing projects, skills and contact information.
 
-This portfolio highlights my work in software development, web development, and logo design, along with my learning journey and featured projects.
+Live demo: https://PrashantRanjan-2006.github.io/My-Portfolio (if GitHub Pages enabled)
 
-🌐 Live Demo
+## What this repo contains
+- index.html — single-page responsive site (interactive 3D / canvas sections)
+- style.css — site styling and themes (light / dark)
+- main.js — site interactions: 3D canvas, particles, timers, audio/video helpers
+- assets/ — images used by the site (avatar-formal.jpg, avatar-stylish.jpg, nature-cover.jpg, video-creator.jpg)
 
-🔗 Portfolio Website:
-https://meprashantranjan.netlify.app/
+## Stack
+- Languages: HTML5, CSS3, JavaScript (vanilla)
+- Features used: Canvas 2D for custom visuals, CSS gradients, responsive layout
 
-👨‍💻 About Me
+## Notable files / features
+- index.html: the complete single-page site with sections for Hero, About, Projects, Skills, Contact and footer.
+- main.js: initializes the 3D/canvas scenes, particle systems, responsive camera, and handles user interactions (mouse move, clicks, audio/video integration, animations).
+- style.css: theme variables, responsive layout rules, and many utility classes used across the site.
+- assets/: contains avatars and cover images referenced by the page.
 
-Hi, I'm Prashant Ranjan 👋
+## How to run locally
+1. Clone the repository
+   git clone https://github.com/PrashantRanjan-2006/My-Portfolio.git
+2. Open the project folder
+   cd My-Portfolio
+3. Open the site
+   - Double-click `index.html` to open in a browser, or run a small static server:
+     python -m http.server 8000
+     Then open http://localhost:8000
 
-🎓 B.Tech Computer Science Student
-💻 Aspiring Full Stack Developer
-🎨 Logo Designer & Creative Enthusiast
+Notes: the site is static — no build step is required.
 
-I enjoy building impactful digital solutions, designing clean user interfaces, and continuously learning new technologies.
+## Customize
+- Edit `index.html` to change content (name, intro, sections).
+- Update `style.css` to change colors, theme variables and layout.
+- Update `main.js` to modify canvas/3D behavior, particle settings, or to add new interactive sections.
+- Replace images in `assets/` with your own (keep filenames or update references in index.html).
 
-✨ Features
+## Deployment (GitHub Pages)
+1. Push your code to the default branch (e.g., `main`).
+2. In the repository Settings → Pages, select the branch and root folder.
+3. After a minute the site will be available at: `https://PrashantRanjan-2006.github.io/My-Portfolio`
 
-✔ Modern UI with smooth animations
-✔ Dark / Light mode support
-✔ Responsive design for all devices
-✔ Project showcase section
-✔ Logo design portfolio
-✔ Embedded video content
-✔ Contact form with EmailJS integration
-✔ Social media integration
+## Contributing
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/name`
+3. Commit and push your changes, then open a Pull Request
 
-🛠️ Built With
+## Additions I noticed you may want
+- Badges (license, pages, build)
+- A screenshot or animated GIF in the README (assets/nature-cover.jpg or a cropped screenshot)
+- A LICENSE file (MIT) if you want to open-source explicitly
 
-HTML5
+## Contact / Links
+- GitHub: https://github.com/PrashantRanjan-2006
+- Repo: https://github.com/PrashantRanjan-2006/My-Portfolio
 
-Tailwind CSS
+---
 
-JavaScript
-
-Font Awesome
-
-EmailJS
-
-📂 Project Structure
-portfolio
-│
-├── index.html
-├── script.js
-├── photo.jpeg
-├── README.md
-📌 Featured Projects
-📚 Library Management System
-
-A Java console application implementing OOP concepts and file handling.
-
-Features:
-
-Add books
-
-Update records
-
-Delete records
-
-Search functionality
-
-🔗 GitHub Repository
-https://github.com/PrashantRanjan-2006/Library-Management-System
-
-🏥 Smart Healthcare System
-
-A web application that helps users find nearby hospitals and medical stores using location-based services.
-
-Features:
-
-Location based search
-
-Healthcare service discovery
-
-Responsive web interface
-
-🔗 GitHub Repository
-https://github.com/PrashantRanjan-2006/Health-care-system
-
-🔗 Live Demo
-https://flourishing-flan-46b69d.netlify.app/
-
-🎨 Logo Design Portfolio
-
-I also design creative and minimal brand logos.
-
-Examples include:
-
-TechCorp
-
-EcoLife
-
-DesignCo
-
-PowerUp
-
-Each logo is designed to communicate brand identity and simplicity.
-
-📹 Content & Videos
-
-The portfolio also includes short video insights where I share:
-
-Tech learning journey
-
-Coding experiences
-
-Design ideas
-
-Creative content
-
-📬 Contact
-
-If you want to collaborate, work together, or just connect:
-
-📧 Email
-prashant.ranjan.2006.2006@gmail.com
-
-💼 LinkedIn
-https://www.linkedin.com/in/prashant-ranjan-a39077330/
-
-💻 GitHub
-https://github.com/PrashantRanjan-2006
-
-📷 Instagram
-https://www.instagram.com/prashant_ranjan5916
-
-
-
-🌐 My Portfolio
-
-You can view my full portfolio website here:
-
-🔗 Portfolio Website
-(https://meprashantranjan.netlify.app/)
+If you'd like I can: add a screenshot to the README, create a LICENSE (MIT), and open a PR that also adds a GitHub Pages workflow to publish automatically.
