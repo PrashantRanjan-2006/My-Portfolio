@@ -41,14 +41,14 @@ These steps will get a copy of the project running locally.
 2. Change into the project directory
    cd My-Portfolio
 3. Open the site-
-  my-portfolio-weld-two-13.vercel.app
+  https://my-portfolio-weld-two-13.vercel.app/
 
 ## Deploying
 You can host the site on GitHub Pages:
 1. Push your code to the repository's default branch.
 2. In GitHub repository Settings → Pages, choose the branch and folder (root).
 3. Your site will be available at:
-   https://PrashantRanjan-2006.github.io/My-Portfolio (or at a custom domain if configured)
+https://my-portfolio-weld-two-13.vercel.app/ (or at a custom domain if configured)
 
 ## Customizing
 - Edit `index.html` (or the main HTML file) to change content.
