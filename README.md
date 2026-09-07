@@ -1,58 +1,82 @@
-# My Portfolio — Prashant Ranjan
+# My Portfolio
 
-Personal portfolio website (3D / interactive front-end) showing projects, skills and contact information.
+A personal portfolio website showcasing projects, skills, and contact information. This repository contains the source for a responsive, easy-to-customize portfolio site.
 
-Live demo: https://PrashantRanjan-2006.github.io/My-Portfolio (if GitHub Pages enabled)
+## Table of Contents
+- [About](#about)
+- [Features](#features)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Deploying](#deploying)
+- [Customizing](#customizing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## What this repo contains
-- index.html — single-page responsive site (interactive 3D / canvas sections)
-- style.css — site styling and themes (light / dark)
-- main.js — site interactions: 3D canvas, particles, timers, audio/video helpers
-- assets/ — images used by the site (avatar-formal.jpg, avatar-stylish.jpg, nature-cover.jpg, video-creator.jpg)
+## About
+This repository hosts the source files for my portfolio website. It highlights projects, skills, and ways to contact me. Use it as a personal website or a template to showcase your work.
 
-## Stack
-- Languages: HTML5, CSS3, JavaScript (vanilla)
-- Features used: Canvas 2D for custom visuals, CSS gradients, responsive layout
+## Features
+- Responsive layout for desktop and mobile
+- Sections for About, Projects, Skills, and Contact
+- Easy to customize content and styling
+- Ready for deployment to GitHub Pages or any static hosting
 
-## Notable files / features
-- index.html: the complete single-page site with sections for Hero, About, Projects, Skills, Contact and footer.
-- main.js: initializes the 3D/canvas scenes, particle systems, responsive camera, and handles user interactions (mouse move, clicks, audio/video integration, animations).
-- style.css: theme variables, responsive layout rules, and many utility classes used across the site.
-- assets/: contains avatars and cover images referenced by the page.
+## Built With
+- HTML5
+- CSS3 (or any CSS framework/style file included)
+- JavaScript (optional)
+> Update this list to reflect your actual tech stack (frameworks, libraries or build tools).
 
-## How to run locally
-1. Clone the repository
+## Getting Started
+These steps will get a copy of the project running locally.
+
+### Prerequisites
+- A modern web browser (Chrome/Firefox/Edge/Safari)
+- Git (to clone the repository)
+
+### Install & Run
+1. Clone the repo
    git clone https://github.com/PrashantRanjan-2006/My-Portfolio.git
-2. Open the project folder
+2. Change into the project directory
    cd My-Portfolio
 3. Open the site
-   - Double-click `index.html` to open in a browser, or run a small static server:
+   - Double-click `index.html` to open locally, or run a simple server:
      python -m http.server 8000
      Then open http://localhost:8000
 
-Notes: the site is static — no build step is required.
+## Deploying
+You can host the site on GitHub Pages:
+1. Push your code to the repository's default branch.
+2. In GitHub repository Settings → Pages, choose the branch and folder (root).
+3. Your site will be available at:
+   https://PrashantRanjan-2006.github.io/My-Portfolio (or at a custom domain if configured)
 
-## Customize
-- Edit `index.html` to change content (name, intro, sections).
-- Update `style.css` to change colors, theme variables and layout.
-- Update `main.js` to modify canvas/3D behavior, particle settings, or to add new interactive sections.
-- Replace images in `assets/` with your own (keep filenames or update references in index.html).
-
-## Deployment (GitHub Pages)
-1. Push your code to the default branch (e.g., `main`).
-2. In the repository Settings → Pages, select the branch and root folder.
-3. After a minute the site will be available at: `https://PrashantRanjan-2006.github.io/My-Portfolio`
+## Customizing
+- Edit `index.html` (or the main HTML file) to change content.
+- Update styles in `css/` (or the stylesheet files) to change design.
+- Replace project screenshots and links with your own.
+- If you use a framework (React/Vue/etc.), update the README to include build/run steps.
 
 ## Contributing
+Contributions are welcome:
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/name`
-3. Commit and push your changes, then open a Pull Request
+2. Create a branch: `git checkout -b feature/my-feature`
+3. Commit: `git commit -m "Add my feature"`
+4. Push: `git push origin feature/my-feature`
+5. Open a Pull Request
 
-## Additions I noticed you may want
-- Badges (license, pages, build)
-- A screenshot or animated GIF in the README (assets/nature-cover.jpg or a cropped screenshot)
-- A LICENSE file (MIT) if you want to open-source explicitly
+## License
+This project is open source. Add a LICENSE file (e.g., MIT) if you want to specify terms. If you already have a license, update this section.
 
+## Contact
+Prashant Ranjan — (your email or social links)
+Repository: https://github.com/PrashantRanjan-2006/My-Portfolio
+
+---
+
+Notes:
+- If you'd like, I can scan the repository to tailor the README to the actual tech stack, add badges (license/demo), include a screenshot, and create a LICENSE or GitHub Pages workflow for automatic deploys.
 ## Contact / Links
 - GitHub: https://github.com/PrashantRanjan-2006
 - Repo: https://github.com/PrashantRanjan-2006/My-Portfolio
