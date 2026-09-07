@@ -40,10 +40,8 @@ These steps will get a copy of the project running locally.
    git clone https://github.com/PrashantRanjan-2006/My-Portfolio.git
 2. Change into the project directory
    cd My-Portfolio
-3. Open the site
-   - Double-click `index.html` to open locally, or run a simple server:
-     python -m http.server 8000
-     Then open http://localhost:8000
+3. Open the site-
+  my-portfolio-weld-two-13.vercel.app
 
 ## Deploying
 You can host the site on GitHub Pages:
