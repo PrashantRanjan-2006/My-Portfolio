@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Ranjan | 3D Developer & Designer Portfolio</title>
+    <meta name="description" content="Personal 3D portfolio and interactive resume of Prashant Ranjan - Software Developer, Java Specialist & Logo Designer.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Three.js (3D WebGL Library) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
+
+    <!-- 3D Portfolio Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 3D WebGL Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Ambient Glowing Spheres -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Navigation HUD -->
+    <nav class="nav-hud">
+        <a href="#home" class="nav-brand">
+            <div class="brand-badge">PR</div>
+            <div>
+                <span class="brand-name">Prashant Ranjan</span>
+                <span class="brand-sub">DEV // 3D PORTFOLIO</span>
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#creative">Creative</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <!-- 3D Persona Switcher -->
+            <button id="persona-toggle" class="hud-btn persona-toggle-btn" title="Toggle 3D Persona (Tech / Creative)">
+                <i class="fa-solid fa-code"></i>
+                <span>Mode: Developer</span>
+            </button>
+
+            <!-- Sound Effects Toggle with Equalizer Visualizer -->
+            <button id="sound-toggle" class="hud-btn sound-active" title="Toggle Sound FX">
+                <span class="sound-bars">
+                    <span class="sound-bar"></span>
+                    <span class="sound-bar"></span>
+                    <span class="sound-bar"></span>
+                </span>
+                <span>SFX</span>
+            </button>
+
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="hud-btn" title="Toggle Light / Dark Mode">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+
+            <!-- Resume Download Link -->
+            <a href="https://drive.google.com/file/d/1eB-5rKWjY3O8A9wal_5R4roUuVoLrXW_/view?usp=drive_link" target="_blank" class="hud-btn" style="border-color: var(--primary); color: var(--primary);">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>CV</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <!-- ==========================================================================
+             HERO SECTION (3D STAGE & AVATAR)
+             ========================================================================== -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Left: Kinetic Info & Pitch -->
+                    <div>
+                        <div class="hero-status-pill">
+                            <span class="pulse-dot"></span>
+                            <span>Available for Software Roles & Creative Projects</span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            Hi, I'm <span class="gradient-text">Prashant</span><br>
+                            <span class="gradient-text-alt">Ranjan</span>
+                        </h1>
+
+                        <div class="hero-typing-box">
+                            <span id="typing-text">Java Full-Stack Developer</span>
+                            <span class="typing-cursor"></span>
+                        </div>
+
+                        <p class="hero-desc">
+                            Crafting high-performance digital experiences, robust core software, and memorable brand identities. Fusing algorithmic logic with striking 3D modern design.
+                        </p>
+
+                        <div class="education-badge">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div>
+                                <strong style="color: var(--text-main);">Galgotias University</strong> &bull; Bachelor of Technology (B.Tech)
+                                <div style="font-size: 0.8rem; color: var(--primary);">Graduation: September 2028 &bull; Computer Science & Engineering</div>
+                            </div>
+                        </div>
+
+                        <div class="hero-ctas">
+                            <a href="#projects" class="btn-3d btn-3d-primary">
+                                <i class="fa-solid fa-cube"></i>
+                                <span>Explore 3D Work</span>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1eB-5rKWjY3O8A9wal_5R4roUuVoLrXW_/view?usp=drive_link" target="_blank" class="btn-3d btn-3d-secondary">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Resume (PDF)</span>
+                            </a>
+                            <a href="#contact" class="btn-3d btn-3d-secondary">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Let's Connect</span>
+                            </a>
+                        </div>
+
+                        <div class="hero-socials">
+                            <a href="https://github.com/PrashantRanjan-2006" target="_blank" class="social-cube" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/prashant-ranjan-a39077330/" target="_blank" class="social-cube" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/prashant_ranjan5916?utm_source=qr&igsh=MW5mZWhuYnR1bmZpNA==" target="_blank" class="social-cube" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="mailto:prashantranjan20192006@gmail.com" class="social-cube" title="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: 3D Hologram Avatar Stage with Orbiting Badges -->
+                    <div class="avatar-stage-container">
+                        <!-- Orbiting 3D Skill Badges -->
+                        <div class="orbit-badge badge-java">
+                            <i class="fa-brands fa-java"></i>
+                            <span>Core Java & OOP</span>
+                        </div>
+                        <div class="orbit-badge badge-react">
+                            <i class="fa-brands fa-react"></i>
+                            <span>Full-Stack Web</span>
+                        </div>
+                        <div class="orbit-badge badge-figma">
+                            <i class="fa-brands fa-figma"></i>
+                            <span>Logo & UI/UX</span>
+                        </div>
+                        <div class="orbit-badge badge-python">
+                            <i class="fa-brands fa-python"></i>
+                            <span>Python & Data</span>
+                        </div>
+
+                        <!-- 3D Interactive Flip Avatar Card -->
+                        <div class="avatar-flip-card" id="avatar-flip-card" title="Click to flip 3D Persona">
+                            <div class="avatar-flipper">
+                                <!-- Front Side: Professional Developer -->
+                                <div class="avatar-side avatar-side-front">
+                                    <div class="avatar-img-wrap">
+                                        <img src="assets/avatar-formal.jpg" alt="Prashant Ranjan - Developer">
+                                        <div class="avatar-overlay-gradient"></div>
+                                    </div>
+                                    <div class="avatar-info">
+                                        <span class="avatar-role-tag">Software Developer</span>
+                                        <span class="avatar-name-tag">Prashant Ranjan</span>
+                                        <span class="flip-hint"><i class="fa-solid fa-repeat"></i> Click to flip</span>
+                                    </div>
+                                </div>
+
+                                <!-- Back Side: Creative Designer & Creator -->
+                                <div class="avatar-side avatar-side-back">
+                                    <div class="avatar-img-wrap">
+                                        <img src="assets/avatar-stylish.jpg" alt="Prashant Ranjan - Creative Technologist">
+                                        <div class="avatar-overlay-gradient"></div>
+                                    </div>
+                                    <div class="avatar-info">
+                                        <span class="avatar-role-tag" style="color: #e879f9;">Creative Technologist</span>
+                                        <span class="avatar-name-tag">Designer & Creator</span>
+                                        <span class="flip-hint"><i class="fa-solid fa-repeat"></i> Click to flip</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             3D STATS COUNTER BAR
+             ========================================================================== -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="card-3d stat-card">
+                        <div class="stat-number" data-target="3" data-suffix="+">0</div>
+                        <div class="stat-label">Full-Stack & Core Projects</div>
+                    </div>
+                    <div class="card-3d stat-card">
+                        <div class="stat-number" data-target="5" data-suffix="+">0</div>
+                        <div class="stat-label">Video Productions & Reels</div>
+                    </div>
+                    <div class="card-3d stat-card">
+                        <div class="stat-number" data-target="4" data-suffix="+">0</div>
+                        <div class="stat-label">Brand Logos Designed</div>
+                    </div>
+                    <div class="card-3d stat-card">
+                        <div class="stat-number" data-target="2028" data-suffix="">0</div>
+                        <div class="stat-label">B.Tech Target @ Galgotias</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             ABOUT & 3D INTERACTIVE JOURNEY TIMELINE
+             ========================================================================== -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-compass"></i> Background & Evolution</span>
+                    <h2 class="section-title">About Me & My Journey</h2>
+                    <p class="section-subtitle">
+                        Currently pursuing Bachelor of Technology at Galgotias University (Class of 2028), evolving into a multifaceted developer who pairs solid system logic with creative design excellence.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Left: Detailed Bio & Learning Matrix -->
+                    <div class="card-3d about-card-left">
+                        <h3 class="font-heading" style="font-size: 1.8rem; margin-bottom: 1.2rem; color: var(--primary);">
+                            Building Meaningful Tech
+                        </h3>
+                        <p class="about-bio">
+                            Every line of code and every visual curve is a milestone in my engineering path. From foundational algorithms in Core Java to responsive full-stack architectures with React and dynamic databases with MySQL, I love constructing scalable, dependable applications.
+                        </p>
+                        <p class="about-bio">
+                            Beyond pure software engineering, I have a deep passion for visual identity, branding typography, and motion storytelling. This unique blend allows me to envision a project from data structures all the way to user experience and logo branding.
+                        </p>
+
+                        <div class="learning-pill-box">
+                            <div class="learning-title">
+                                <i class="fa-solid fa-bolt"></i> Currently Mastering
+                            </div>
+                            <div class="pill-group">
+                                <span class="tech-pill"><i class="fa-brands fa-java"></i> Advanced Java</span>
+                                <span class="tech-pill"><i class="fa-brands fa-figma"></i> Figma Design Systems</span>
+                                <span class="tech-pill"><i class="fa-solid fa-layer-group"></i> Full-Stack Architecture</span>
+                                <span class="tech-pill"><i class="fa-solid fa-database"></i> Database Indexing & MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: 3D Glowing Timeline -->
+                    <div class="timeline-track">
+                        <div class="timeline-line-glow"></div>
+
+                        <!-- Milestone 1 -->
+                        <div class="timeline-node">
+                            <div class="node-bullet">1</div>
+                            <div class="card-3d node-content-card">
+                                <span class="node-year-badge">2024 &bull; KICKOFF</span>
+                                <h4 class="node-heading">Started B-Tech CSE at Galgotias</h4>
+                                <p class="node-desc">
+                                    Commenced higher engineering journey with the drive to develop strong technical principles, computational problem solving, and professional character.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 2 -->
+                        <div class="timeline-node">
+                            <div class="node-bullet">2</div>
+                            <div class="card-3d node-content-card">
+                                <span class="node-year-badge">2024 &bull; CORE LOGIC</span>
+                                <h4 class="node-heading">Mastered Java Fundamentals & OOP</h4>
+                                <p class="node-desc">
+                                    Explored object-oriented programming, data structures, persistent file input/output, and clean architecture principles.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 3 -->
+                        <div class="timeline-node">
+                            <div class="node-bullet">3</div>
+                            <div class="card-3d node-content-card">
+                                <span class="node-year-badge">LATE 2024 &bull; CREATIVITY</span>
+                                <h4 class="node-heading">Creative Design & Logo Identities</h4>
+                                <p class="node-desc">
+                                    Expanded into vector logos, typography craft, color theory, and UI/UX design tools (Figma, Illustrator principles).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 4 -->
+                        <div class="timeline-node">
+                            <div class="node-bullet">4</div>
+                            <div class="card-3d node-content-card">
+                                <span class="node-year-badge">2025 &bull; MEDIA & PRODUCTION</span>
+                                <h4 class="node-heading">Content Creator & Video Storyteller</h4>
+                                <p class="node-desc">
+                                    Published 5+ dynamic reels and video edits blending tech insights, graphic design, and cinematic nature aesthetics.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 5 -->
+                        <div class="timeline-node">
+                            <div class="node-bullet" style="border-color: #f59e0b; color: #f59e0b;">5</div>
+                            <div class="card-3d node-content-card">
+                                <span class="node-year-badge" style="color: #f59e0b;">CURRENTLY &bull; ACTIVE FOCUS</span>
+                                <h4 class="node-heading">Advancing Full-Stack & Systems</h4>
+                                <p class="node-desc">
+                                    Scaling enterprise-grade Java workflows, exploring modern web frameworks, and creating engaging tech content.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             3D SKILLS & MATRIX
+             ========================================================================== -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-microchip"></i> Capabilities</span>
+                    <h2 class="section-title">Technical & Creative Skills</h2>
+                    <p class="section-subtitle">
+                        An integrated toolkit spanning rigorous back-end algorithms, web applications, and creative multimedia.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Category 1: Core Programming -->
+                    <div class="card-3d skill-category-card">
+                        <div class="skill-card-icon">
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <h3 class="skill-card-title">Core Systems & Logic</h3>
+                        <div class="skill-item-list">
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Core Java & OOP</span>
+                                    <span style="color: var(--primary);">95%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Python Programming</span>
+                                    <span style="color: var(--primary);">85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Data Structures & File I/O</span>
+                                    <span style="color: var(--primary);">90%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>MySQL & Relational DBs</span>
+                                    <span style="color: var(--primary);">82%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 82%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Full-Stack & Web -->
+                    <div class="card-3d skill-category-card">
+                        <div class="skill-card-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="skill-card-title">Web & Frontend</h3>
+                        <div class="skill-item-list">
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Modern JavaScript & ES6+</span>
+                                    <span style="color: var(--primary);">88%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 88%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>React.js & Component Architecture</span>
+                                    <span style="color: var(--primary);">84%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 84%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>HTML5 & CSS3 / Tailwind CSS</span>
+                                    <span style="color: var(--primary);">94%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 94%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>REST APIs & Cloud Integrations</span>
+                                    <span style="color: var(--primary);">80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Creative Suite & Media -->
+                    <div class="card-3d skill-category-card">
+                        <div class="skill-card-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3 class="skill-card-title">Design & Media Craft</h3>
+                        <div class="skill-item-list">
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Logo Design & Brand Identity</span>
+                                    <span style="color: var(--primary);">92%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Figma UI/UX Prototyping</span>
+                                    <span style="color: var(--primary);">86%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 86%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Video Editing & Motion Graphics</span>
+                                    <span style="color: var(--primary);">85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="skill-meter-header">
+                                    <span>Social Media Content Creation</span>
+                                    <span style="color: var(--primary);">90%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             FEATURED 3D PROJECTS SHOWCASE
+             ========================================================================== -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-cubes-stacked"></i> Engineering Works</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">
+                        Practical, production-grade applications highlighting algorithmic integrity, real-world utility, and clean user interfaces.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Library Management System -->
+                    <div class="card-3d project-card-3d">
+                        <div class="project-top">
+                            <div class="project-header-bar">
+                                <div class="project-icon-box">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <span class="project-badge-tag">Core Java & OOP</span>
+                            </div>
+
+                            <h3 class="project-title">Library Management System</h3>
+                            <p class="project-desc">
+                                A robust Java architecture featuring comprehensive add, update, delete, search, and inventory management operations. Engineered with strict OOP principles, modular error handling, and persistent file I/O storage.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag-pill">Core Java</span>
+                                <span class="project-tag-pill">OOP Design</span>
+                                <span class="project-tag-pill">File I/O</span>
+                                <span class="project-tag-pill">Console Architecture</span>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/PrashantRanjan-2006/Library-Management-System" target="_blank" class="btn-3d btn-3d-primary project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Smart Healthcare System -->
+                    <div class="card-3d project-card-3d">
+                        <div class="project-top">
+                            <div class="project-header-bar">
+                                <div class="project-icon-box" style="color: #60a5fa; border-color: rgba(96, 165, 250, 0.3);">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <span class="project-badge-tag" style="color: #60a5fa;">Full-Stack Web</span>
+                            </div>
+
+                            <h3 class="project-title">Smart Healthcare System</h3>
+                            <p class="project-desc">
+                                Bridges patients with nearby healthcare practitioners and medical facilities using geolocation search for hospitals and pharmacies. Features interactive provider listings, appointment tracking, and real-time mapping.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag-pill">React.js</span>
+                                <span class="project-tag-pill">Maps API</span>
+                                <span class="project-tag-pill">Geolocation</span>
+                                <span class="project-tag-pill">Responsive UI</span>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/PrashantRanjan-2006/Health-care-system" target="_blank" class="btn-3d btn-3d-secondary project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>Code</span>
+                            </a>
+                            <a href="https://flourishing-flan-46b69d.netlify.app/" target="_blank" class="btn-3d btn-3d-primary project-btn">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: E-Commerce Shopkart -->
+                    <div class="card-3d project-card-3d">
+                        <div class="project-top">
+                            <div class="project-header-bar">
+                                <div class="project-icon-box" style="color: #34d399; border-color: rgba(52, 211, 153, 0.3);">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </div>
+                                <span class="project-badge-tag" style="color: #34d399;">E-Commerce Web</span>
+                            </div>
+
+                            <h3 class="project-title">E-Commerce Shopkart</h3>
+                            <p class="project-desc">
+                                Complete storefront solution featuring dynamic shopping cart state, real-time product filtering, category browsing, and optimized checkout flow built with modern JavaScript and responsive layouts.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag-pill">JavaScript</span>
+                                <span class="project-tag-pill">Cart State</span>
+                                <span class="project-tag-pill">Tailwind</span>
+                                <span class="project-tag-pill">Web Store</span>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/PrashantRanjan-2006/E-commerce-shopkart.git" target="_blank" class="btn-3d btn-3d-secondary project-btn">
+                                <i class="fa-brands fa-github"></i>
+                                <span>Code</span>
+                            </a>
+                            <a href="https://shopkkart.netlify.app/" target="_blank" class="btn-3d btn-3d-primary project-btn">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             CREATIVE DIMENSION: VIDEOS & 3D LOGOS
+             ========================================================================== -->
+        <section id="creative" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-film"></i> Media & Brand Design</span>
+                    <h2 class="section-title">Creative Dimension</h2>
+                    <p class="section-subtitle">
+                        Where technical expertise converges with visual storytelling, motion editing, and memorable brand marks.
+                    </p>
+                </div>
+
+                <!-- Video Showcase -->
+                <div class="creative-sub-header">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <span>Video Productions & Motion Editing</span>
+                </div>
+
+                <div class="videos-slider-3d">
+                    <!-- Video 1 -->
+                    <div class="card-3d video-frame-card">
+                        <div class="video-responsive-wrap">
+                            <iframe src="https://www.youtube.com/embed/L6HVapmtmzI?si=bEiTEyf07WZ6HML6" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info-box">
+                            <h4 class="video-title">Creative Edit & Visual Effects</h4>
+                            <span class="video-meta"><i class="fa-solid fa-scissors"></i> Editing & Timing &bull; YouTube Showcase</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="card-3d video-frame-card">
+                        <div class="video-responsive-wrap">
+                            <iframe src="https://www.youtube.com/embed/gg_8zzqcLQM?si=v3MK1By7xCd-O8zO" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info-box">
+                            <h4 class="video-title">High-Energy Pacing & Cut</h4>
+                            <span class="video-meta"><i class="fa-solid fa-bolt"></i> Motion Pacing & Sound Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="card-3d video-frame-card">
+                        <div class="video-responsive-wrap">
+                            <iframe src="https://www.youtube.com/embed/idscET5p6sk?si=j3BCCoLDe9cGzhi2" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info-box">
+                            <h4 class="video-title">Visual Storytelling & Narrative</h4>
+                            <span class="video-meta"><i class="fa-solid fa-wand-magic-sparkles"></i> Color Grading & Narrative Flow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Logo Showcase -->
+                <div class="creative-sub-header" style="margin-top: 4rem;">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <span>I Design Logos that Speak</span>
+                </div>
+                <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 2rem;">
+                    Every brand has an intrinsic identity. I translate brand missions into memorable, clean geometric marks that resonate across digital and print mediums.
+                </p>
+
+                <div class="logos-3d-grid">
+                    <!-- TechCorp -->
+                    <div class="card-3d logo-cube-card">
+                        <div class="logo-symbol-box logo-techcorp">
+                            TC
+                        </div>
+                        <h4 class="logo-name">TechCorp</h4>
+                        <span class="logo-category">Enterprise & SaaS Identity</span>
+                    </div>
+
+                    <!-- EcoLife -->
+                    <div class="card-3d logo-cube-card">
+                        <div class="logo-symbol-box logo-ecolife">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h4 class="logo-name">EcoLife</h4>
+                        <span class="logo-category">Sustainability & Organic</span>
+                    </div>
+
+                    <!-- DesignCo -->
+                    <div class="card-3d logo-cube-card">
+                        <div class="logo-symbol-box logo-designco">
+                            D
+                        </div>
+                        <h4 class="logo-name">DesignCo</h4>
+                        <span class="logo-category">Creative Studio & Agency</span>
+                    </div>
+
+                    <!-- PowerUp -->
+                    <div class="card-3d logo-cube-card">
+                        <div class="logo-symbol-box logo-powerup">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h4 class="logo-name">PowerUp</h4>
+                        <span class="logo-category">Performance & Fitness Brand</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             3D CONTACT SECTION & HUB
+             ========================================================================== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-satellite-dish"></i> Transmission Hub</span>
+                    <h2 class="section-title">Let's Build Something 3D</h2>
+                    <p class="section-subtitle">
+                        Open for software development roles, internships, logo commissions, and creative collaborations.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Form Card -->
+                    <div class="card-3d contact-form-card">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label class="form-label" for="form-name">
+                                    <i class="fa-solid fa-user"></i> Full Name
+                                </label>
+                                <input type="text" id="form-name" class="form-input-3d" placeholder="Your name or company" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="form-email">
+                                    <i class="fa-solid fa-envelope"></i> Email Address
+                                </label>
+                                <input type="email" id="form-email" class="form-input-3d" placeholder="you@domain.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="form-subject">
+                                    <i class="fa-solid fa-heading"></i> Subject
+                                </label>
+                                <input type="text" id="form-subject" class="form-input-3d" placeholder="Project collaboration, Software role, Logo inquiry..." required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="form-message">
+                                    <i class="fa-solid fa-message"></i> Message
+                                </label>
+                                <textarea id="form-message" class="form-input-3d" placeholder="Tell me about your goals, ideas, or timeline..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-3d btn-3d-primary" style="width: 100%; padding: 1rem;">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Direct Transmission</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Sidebar Cards -->
+                    <div class="contact-sidebar">
+                        <a href="mailto:prashantranjan20192006@gmail.com" class="card-3d contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-title">Direct Email</div>
+                                <div class="contact-info-val">prashantranjan20192006@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/prashant-ranjan-a39077330/" target="_blank" class="card-3d contact-info-card">
+                            <div class="contact-info-icon" style="color: #0a66c2;">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-title">LinkedIn Profile</div>
+                                <div class="contact-info-val">prashant-ranjan-a39077330</div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/PrashantRanjan-2006" target="_blank" class="card-3d contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-title">GitHub Repository Hub</div>
+                                <div class="contact-info-val">github.com/PrashantRanjan-2006</div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/prashant_ranjan5916?utm_source=qr&igsh=MW5mZWhuYnR1bmZpNA==" target="_blank" class="card-3d contact-info-card">
+                            <div class="contact-info-icon" style="color: #e1306c;">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-title">Instagram Journey</div>
+                                <div class="contact-info-val">@prashant_ranjan5916</div>
+                            </div>
+                        </a>
+
+                        <!-- Quick Assurance Card -->
+                        <div class="card-3d" style="padding: 1.5rem; border-color: rgba(var(--primary-rgb), 0.3);">
+                            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; color: var(--primary); font-weight: 700;">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>Rapid Response Guarantee</span>
+                            </div>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">
+                                Typically responding within 24 hours. Available for remote engineering opportunities and creative branding projects worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             FOOTER
+             ========================================================================== -->
+        <footer class="footer-3d">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-copy">
+                        &copy; 2026 <strong>Prashant Ranjan</strong>. All Rights Reserved.
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">
+                            B.Tech CSE &bull; Galgotias '28
+                        </span>
+                        <div id="back-to-top" class="back-to-top" title="Scroll to Top">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Email Success Confirmation Modal -->
+    <div id="email-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--text-main);">
+                Message Sent Successfully!
+            </h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.8rem; font-size: 0.95rem;">
+                Thank you for reaching out, Prashant will review your transmission and get back to you promptly.
+            </p>
+            <button id="modal-close-btn" class="btn-3d btn-3d-primary" style="width: 100%;">
+                Dismiss
+            </button>
+        </div>
+    </div>
+
+    <!-- Main 3D Engine Script -->
+    <script src="main.js"></script>
+</body>
+</html>
